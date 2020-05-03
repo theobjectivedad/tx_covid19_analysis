@@ -14,8 +14,14 @@ if __name__ == '__main__':
     url = 'https://txdshs.maps.arcgis.com/apps/opsdashboard/index.html#/ed483ecd702b4298ab01e8b9cafc8b83'
     wait_time = 10
 
+
+    from selenium.webdriver.chrome.options import Options
+    options = Options()
+    options.add_argument("--remote-debugging-port=9222")
+
+
     # Crawl and parse data form page
-    with webdriver.Chrome() as driver:
+    with webdriver.Chrome(options=options) as driver:
 
         print('Opening URL %s' % url)
         driver.get(url)
