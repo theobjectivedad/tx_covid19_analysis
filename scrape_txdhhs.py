@@ -39,7 +39,7 @@ if __name__ == '__main__':
             'private_labs': float(re.sub(r'[^0-9]', '', driver.find_element_by_xpath('/html/body/div/div/div/div/div/div/margin-container/full-container/div[4]/margin-container/full-container/div/div/div/div[1]').text)),
             'cases_reported': float(re.sub(r'[^0-9]', '', driver.find_element_by_xpath('/html/body/div/div/div/div/div/div/margin-container/full-container/div[6]/margin-container/full-container/div/div/div/div[1]').text)),
             'fatalities': float(re.sub(r'[^0-9]', '', driver.find_element_by_xpath('/html/body/div/div/div/div/div/div/margin-container/full-container/div[7]/margin-container/full-container/div/div/div/div[1]').text)),
-            'updated': datetime.strptime(driver.find_element_by_xpath('/html/body/div/div/div/div/div/div/margin-container/full-container/div[64]/margin-container/full-container/div/div/div/div[2]').text, '%m/%d/%Y %H:%M%p'),
+            'updated': datetime.strptime(driver.find_element_by_xpath('/html/body/div/div/div/div/div/div/margin-container/full-container/div[67]/margin-container/full-container/div/div/div/div[2]').text, '%m/%d/%Y %H:%M%p'),
         }
 
         print(data)

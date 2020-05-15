@@ -2,3 +2,6 @@ selenium
 pandas
 jupyter
 seaborn
+fbprophet
+plotly
+ipywidgets
