@@ -5,3 +5,4 @@ seaborn
 fbprophet
 plotly
 ipywidgets
+xlrd

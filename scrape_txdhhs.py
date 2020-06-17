@@ -32,17 +32,20 @@ if __name__ == '__main__':
 
         print('Scraping TxHHS')
 
-        total_tests_path = '/html/body/div/div/div/div/div/div/margin-container/full-container/div[2]/margin-container/full-container/div/div/div/div[2]'
-        cases_reported_path = '/html/body/div/div/div/div/div/div/margin-container/full-container/div[5]/margin-container/full-container/div/div/div/div[1]'
-        fatalities_path = '/html/body/div/div/div/div/div/div/margin-container/full-container/div[7]/margin-container/full-container/div/div/div/div[1]'
-        updated_path = '/html/body/div/div/div/div/div/div/margin-container/full-container/div[45]/margin-container/full-container/div/div/div/div[2]'
+        total_tests_path = '/html/body/div/div/div/div/div/div/margin-container/full-container/div[3]/margin-container/full-container/div/div/div/div[2]'
+        cases_reported_path = '/html/body/div/div/div/div/div/div/margin-container/full-container/div[6]/margin-container/full-container/div/div/div/div[1]'
+        fatalities_path = '/html/body/div/div/div/div/div/div/margin-container/full-container/div[8]/margin-container/full-container/div/div/div/div[1]'
+        updated_path = '/html/body/div/div/div/div/div/div/margin-container/full-container/div[51]/margin-container/full-container/div/div/div/div[2]'
 
         data = {
             'ts': datetime.now(),
             'total_tests': float(re.sub(r'[^0-9]', '', driver.find_element_by_xpath(total_tests_path).text)),
+
+            # Note these are no longer published on this site
             'currently_in_hospitals': -1,
             'public_labs': -1,
             'private_labs': -1,
+
             'cases_reported': float(re.sub(r'[^0-9]', '', driver.find_element_by_xpath(cases_reported_path).text)),
             'fatalities': float(re.sub(r'[^0-9]', '', driver.find_element_by_xpath(fatalities_path).text)),
             'updated': datetime.strptime(driver.find_element_by_xpath(updated_path).text, '%m/%d/%Y %H:%M%p'),
